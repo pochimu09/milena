@@ -270,3 +270,66 @@ section ul li::before {
         transform: translateY(-100px) scale(0.5);
     }
 }
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* Уменьшаем размер заголовка */
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, ul, li {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .gallery-grid img {
+        width: 100px; /* Уменьшаем размер фото */
+        height: 100px;
+    }
+
+    .modal-content {
+        margin: 10% auto; /* Увеличиваем отступ для модального окна */
+    }
+
+    .close {
+        font-size: 30px; /* Уменьшаем размер крестика */
+        top: 10px;
+        right: 20px;
+    }
+}
+
+/* Медиа-запросы для планшетов (от 601px до 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    h1 {
+        font-size: 32px; /* Средний размер заголовка */
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    p, ul, li {
+        font-size: 17px; /* Средний размер текста */
+    }
+
+    .gallery-grid img {
+        width: 120px; /* Средний размер фото */
+        height: 120px;
+    }
+
+    .modal-content {
+        margin: 7% auto; /* Средний отступ для модального окна */
+    }
+
+    .close {
+        font-size: 35px; /* Средний размер крестика */
+        top: 15px;
+        right: 25px;
+    }
+}
+
+/* Медиа-запросы для десктопов (от 1025px и выше) */
+@media (min-width: 1025px) {
+    /* Оставляем стили по умолчанию */
+}

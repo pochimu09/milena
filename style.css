@@ -1,0 +1,272 @@
+/* styles.css */
+body {
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    background-color: #f5f5dc; /* Бежевый фон */
+    color: #4b3621; /* Коричневый текст */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url("фон.jpg");
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff8e7; /* Светло-бежевый фон контейнера */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #6b4423; /* Темно-коричневый */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #8b7355; /* Светло-коричневый */
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    margin: 8%;
+    text-align: center;
+    
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #6b4423; /* Коричневая рамка */
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+.hearts {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.photo-container:hover .hearts {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6b4423; /* Коричневая кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8b7355; /* Светло-коричневый при наведении */
+}
+
+.hidden {
+    display: none;
+}
+
+#birthdayMessage {
+    font-size: 24px;
+    color: #6b4423;
+    text-align: center;
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #6b4423;
+    margin-bottom: 15px;
+}
+
+section p, section ul {
+    font-size: 18px;
+    color: #4b3621;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+section ul li::before {
+    content: "❤️";
+    margin-right: 10px;
+}
+
+.gallery {
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    white-space: nowrap; /* Запрет переноса строк */
+    padding-bottom: 10px; /* Чтобы не обрезались тени или рамки */
+}
+
+.gallery-grid {
+    display: inline-grid; /* Строчно-блочная сетка */
+    grid-auto-flow: column; /* Элементы идут в одну строку */
+    gap: 0; /* Убираем отступы между фото */
+}
+
+.gallery-grid img {
+    width: 150px; /* Фиксированная ширина для фото */
+    height: 150px; /* Фиксированная высота для фото */
+    object-fit: cover; /* Обрезка фото для сохранения пропорций */
+    border-radius: 7%; /* Закругленные углы */
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Стили для прокрутки в WebKit-браузерах (Chrome, Safari) */
+.gallery::-webkit-scrollbar {
+    width: 12px; /* Ширина полосы прокрутки */
+    height: 12px; /* Высота полосы прокрутки (для горизонтальной прокрутки) */
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: #f5f5dc; /* Цвет фона трека (бежевый) */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: #6b4423; /* Цвет ползунка (коричневый) */
+    border-radius: 10px; /* Закругленные углы */
+    border: 3px solid #f5f5dc; /* Рамка вокруг ползунка */
+}
+
+.gallery::-webkit-scrollbar-thumb:hover {
+    background: #8b7355; /* Цвет ползунка при наведении (светло-коричневый) */
+}
+
+/* Стили для прокрутки в Firefox */
+.gallery {
+    scrollbar-color: #6b4423 #f5f5dc; /* Цвет ползунка и трека */
+    scrollbar-width: thin; /* Тонкая полоса прокрутки */
+}
+
+.contacts a {
+    color: #6b4423;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts a:hover {
+    color: #8b7355;
+}
+
+.gallery-hobbi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-hobbi img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-hobbi img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Темный фон */
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    margin: 5% auto; /* Центрирование */
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #6b4423; /* Коричневый при наведении */
+}
+
+/* Контейнер для сердечек */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Стили для сердечек */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: #ff6b6b;
+    animation: float 1s ease-out;
+    user-select: none;
+}
+
+/* Анимация для сердечек */
+@keyframes float {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.5);
+    }
+}
